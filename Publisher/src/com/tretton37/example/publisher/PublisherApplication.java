@@ -11,6 +11,5 @@ import java.util.List;
  */
 public class PublisherApplication extends RoboApplication {
      protected void addApplicationModules(List<Module> modules) {
-        //modules.add(new PublisherModule());
     }
 }
