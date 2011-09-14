@@ -1,9 +1,9 @@
 package com.tretton37.example.user;
 
-import android.app.Activity;
 import android.os.Bundle;
+import roboguice.activity.RoboActivity;
 
-public class UserActivity extends Activity
+public class UserActivity extends RoboActivity
 {
     /** Called when the activity is first created. */
     @Override
