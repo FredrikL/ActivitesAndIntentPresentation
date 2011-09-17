@@ -1,0 +1,6 @@
+aktiviteter
+lifecycle
+intents
+os (kamera?)
+andra subscibers (barcode scanner)
+receivers? (typ share ala ttumblr)
