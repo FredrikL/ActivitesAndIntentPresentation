@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 
@@ -22,8 +23,12 @@ public class PublisherActivity extends RoboActivity {
 
         btnRespond.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //To change body of implemented methods use File | Settings | File Templates.
                 // return intent
+
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("value", "moo");
+                setResult(RESULT_OK, resultIntent);
+                finish();
             }
         });
 
@@ -33,7 +38,7 @@ public class PublisherActivity extends RoboActivity {
             String action = intent.getAction();
             if(action.equals("com.tretton37.example.publisher.DEMO"))
             {
-                // do stuff ?
+                Toast.makeText(getApplicationContext(),"demo!", Toast.LENGTH_LONG).show();
             }
         }
     }
