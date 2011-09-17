@@ -3,6 +3,7 @@ package com.tretton37.example.user;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -39,8 +40,8 @@ public class UserActivity extends RoboActivity
         if(requestCode == DEMO)
         {
             String value = (String)data.getExtras().get("value");
-
-            Toast.makeText(getApplicationContext(), value, Toast.LENGTH_LONG);
+            Log.i("User", "Publisher said: " + value);
+            Toast.makeText(this, "Publisher said: " + value, Toast.LENGTH_SHORT);
         }
     }
 }
