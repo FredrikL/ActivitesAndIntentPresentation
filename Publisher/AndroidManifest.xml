@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.tretton37.example.publisher">
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".PublisherApplication">
-        <activity android:name=".PublisherActivity"/>
+        <activity android:name=".PublisherActivity">
+            <intent-filter>
+                <action android:name="com.tretton37.example.publisher.DEMO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".StartupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

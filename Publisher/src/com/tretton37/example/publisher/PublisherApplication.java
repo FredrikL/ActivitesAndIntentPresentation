@@ -1,6 +1,5 @@
 package com.tretton37.example.publisher;
 
-import android.app.Application;
 import com.google.inject.Module;
 import roboguice.application.RoboApplication;
 
