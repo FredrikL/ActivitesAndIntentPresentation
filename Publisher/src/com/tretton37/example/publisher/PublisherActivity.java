@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
@@ -15,6 +16,7 @@ public class PublisherActivity extends RoboActivity {
 
     @InjectView(R.id.palTextView) TextView palTextView;
     @InjectView(R.id.btnRespond) Button btnRespond;
+    @InjectView(R.id.palReponseText) EditText responseText;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public class PublisherActivity extends RoboActivity {
                 // return intent
 
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra("value", "moo");
+                resultIntent.putExtra("value", responseText.getText().toString());
                 setResult(RESULT_OK, resultIntent);
                 finish();
             }

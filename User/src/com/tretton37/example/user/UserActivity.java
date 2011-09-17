@@ -41,7 +41,7 @@ public class UserActivity extends RoboActivity
         {
             String value = (String)data.getExtras().get("value");
             Log.i("User", "Publisher said: " + value);
-            Toast.makeText(this, "Publisher said: " + value, Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Publisher said: " + value, Toast.LENGTH_SHORT).show();
         }
     }
 }

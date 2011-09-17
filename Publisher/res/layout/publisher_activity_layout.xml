@@ -6,7 +6,11 @@
     <TextView android:id="@+id/palTextView"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            android:text="foo" />
+            android:text="What to say?" />
+    <EditText android:id="@+id/palReponseText"
+              android:layout_height="wrap_content"
+              android:layout_width="fill_parent"
+              />
     <Button android:id="@+id/btnRespond"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
