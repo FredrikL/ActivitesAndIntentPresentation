@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 
@@ -39,7 +40,7 @@ public class PublisherActivity extends RoboActivity {
             String action = intent.getAction();
             if(action.equals("com.tretton37.example.publisher.DEMO"))
             {
-              //  Toast.makeText(getApplicationContext(), "demo!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "demo!", Toast.LENGTH_LONG).show();
             }
         }
     }
