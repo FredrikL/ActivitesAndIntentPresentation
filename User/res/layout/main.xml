@@ -26,5 +26,10 @@
             android:layout_height="wrap_content"
             android:text="Call unknown intent"
             />
+
+    <Button android:id="@+id/btnCallUnknownIntentWithoutCrash"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Call unknown intent without crashing" />
 </LinearLayout>
 
