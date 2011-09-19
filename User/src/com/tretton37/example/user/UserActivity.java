@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 import roboguice.activity.RoboActivity;
@@ -29,32 +30,41 @@ public class UserActivity extends RoboActivity {
     final int LOLS = 1;
     final int CAMERA = 2;
 
+    final String LOLSIntent = "com.tretton37.example.publisher.LOLS";
+    final String  DEMOIntent = "com.tretton37.example.publisher.DEMO";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
+
+
+        setupButtons();
+    }
+
+    private void setupButtons() {
         btnCallIntent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // call intent in publisher application
-                Intent intent = new Intent("com.tretton37.example.publisher.DEMO");
+                Intent intent = new Intent(DEMOIntent);
                 startActivityForResult(intent, DEMO);
             }
         });
 
-        // Add btn for camera intent & unkown intent (com.tretton37.example.publisher.LOLS)
         btnCallUnknownInten.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent("com.tretton37.example.publisher.LOLS");
+                Intent intent = new Intent(LOLSIntent);
                 startActivityForResult(intent, LOLS);
             }
         });
 
         btnCallUnknownIntentWithoutCrash.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if(canCallIntent("com.tretton37.example.publisher.LOLS")) {
-                    Intent intent = new Intent("com.tretton37.example.publisher.LOLS");
-                    startActivityForResult(intent, LOLS);
+                if(canCallIntent(LOLSIntent)) {
+                    Intent intent = new Intent(LOLSIntent);
+                    startActivityForResult(intent, UserActivity.this.LOLS);
                 }
             }
         });
