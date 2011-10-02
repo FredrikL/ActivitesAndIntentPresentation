@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
@@ -25,6 +27,8 @@ public class UserActivity extends RoboActivity {
     Button btnCallUnknownInten;
     @InjectView(R.id.btnCallUnknownIntentWithoutCrash)
     Button btnCallUnknownIntentWithoutCrash;
+    @InjectView(R.id.ivCameraImage)
+    ImageView ivCameraImage;
 
     final int DEMO = 0;
     final int LOLS = 1;
@@ -101,7 +105,8 @@ public class UserActivity extends RoboActivity {
                 break;
 
             case CAMERA:
-                // show images
+                Bitmap photo = (Bitmap) data.getExtras().get("data");
+                ivCameraImage.setImageBitmap(photo);
                 break;
 
             default:

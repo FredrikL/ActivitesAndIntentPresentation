@@ -34,5 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:text="Call unknown intent without crashing" />
+
+    <ImageView android:id="@+id/ivCameraImage"
+               android:layout_height="wrap_content"
+               android:layout_width="fill_parent"
+               />
 </LinearLayout>
 
