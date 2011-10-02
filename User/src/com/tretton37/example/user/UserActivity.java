@@ -62,7 +62,7 @@ public class UserActivity extends RoboActivity {
 
         btnCallUnknownIntentWithoutCrash.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if(canCallIntent(LOLSIntent)) {
+                if(isIntentPublished(LOLSIntent)) {
                     Intent intent = new Intent(LOLSIntent);
                     startActivityForResult(intent, UserActivity.this.LOLS);
                 }
@@ -77,7 +77,7 @@ public class UserActivity extends RoboActivity {
         });
     }
 
-    private boolean canCallIntent(String Intent) {
+    private boolean isIntentPublished(String Intent) {
         PackageManager packageManager = getPackageManager();
         Intent intent = new Intent(Intent);
         List<ResolveInfo> list = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
